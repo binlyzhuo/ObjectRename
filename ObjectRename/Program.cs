@@ -14,7 +14,7 @@ namespace ObjectRename
         {
             UserData data = new UserData();
             
-            Regex regex = new Regex(@"[^0-9]+");
+            //Regex regex = new Regex(@"[^0-9]+");
 
             var newUsers = new List<UserInfo>();
             newUsers.Add(new UserInfo(){UDate =  DateTime.Now, UName = "2018002"});

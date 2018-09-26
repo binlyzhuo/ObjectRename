@@ -5,6 +5,13 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectRename", "ObjectRename\ObjectRename.csproj", "{E9B9B350-C28E-46A3-80E3-0E592846DD32}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{9C30B6C2-4636-431A-9F65-D5979EA80028}"
+	ProjectSection(SolutionItems) = preProject
+		db\PhysicalDataModel_1.pdb = db\PhysicalDataModel_1.pdb
+		db\PhysicalDataModel_1.pdm = db\PhysicalDataModel_1.pdm
+		db\Workspace.sws = db\Workspace.sws
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
