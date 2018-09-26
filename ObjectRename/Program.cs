@@ -19,11 +19,29 @@ namespace ObjectRename
             var newUsers = new List<UserInfo>();
             newUsers.Add(new UserInfo(){UDate =  DateTime.Now, UName = "2018002"});
             newUsers.Add(new UserInfo(){UDate =  DateTime.Now, UName = "2018003"});
-            newUsers.Add(new UserInfo(){UDate =  DateTime.Now, UName = "张三"});
+            //newUsers.Add(new UserInfo(){UDate =  DateTime.Now, UName = "张三"});
 
             var users = data.UsersGet();
             foreach (var info in newUsers)
             {
+                bool isNumber = Regex.IsMatch(info.UName, @"^[+-]?\d*[.]?\d*$");
+                if (isNumber)
+                {
+                    var temp2 = users.Select(mm => mm.UName == info.UName).ToList();
+                    if (temp2.Count > 0)
+                    {
+                        Console.WriteLine("数据库有重复UName");
+                        return;
+                    }
+
+                    var temp3 = newUsers.Select(mm => mm.UName == info.UName).ToList();
+                    if (temp3.Count > 1)
+                    {
+                        Console.WriteLine("导入数据有重复UName");
+                        return;
+                    }
+                }
+                    
                 
                 var temp = users.Where(u => u.UName.StartsWith(info.UName)).ToList();
                 int max = MaxIdGet(temp);
